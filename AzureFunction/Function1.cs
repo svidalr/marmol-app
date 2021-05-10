@@ -17,6 +17,8 @@ namespace AzureFunction
             [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
             ILogger log)
         {
+            //crear cosmos sevice,  
+
             log.LogInformation("C# HTTP trigger function processed a request.");
 
             string name = req.Query["name"];

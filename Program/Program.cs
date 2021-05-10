@@ -15,6 +15,7 @@ namespace Program
             var item = await cosmosservices.GetCliente("id43434");
 
             Console.WriteLine(item);
+
             //CosmosClient client = new CosmosClient("https://marmol-app.documents.azure.com:443/", "IUPaiA9a7bbizD4gJutlRVdzb2Hh2a7C2ezZdfr3pvKUjgTB0JPT5dO3yFv5RS3uIu3juFyiSYJENPHHI90FVA==");
             //Database database = await client.CreateDatabaseIfNotExistsAsync("MarmolDb");
             //Container container = await database.CreateContainerIfNotExistsAsync(
