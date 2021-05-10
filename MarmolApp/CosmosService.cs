@@ -34,7 +34,7 @@ namespace MarmolApp
 
         public dynamic GetCliente(string id)
         {
-            return GetItem(id,"cliente" );
+            return GetItem(id,"cliente");
         }
     }
 }
