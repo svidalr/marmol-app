@@ -1,0 +1,11 @@
+C:\Users\Sebastian\source\repos\Program\MarmolApp\bin\Debug\netcoreapp3.1\Microsoft.Azure.Cosmos.ServiceInterop.dll
+C:\Users\Sebastian\source\repos\Program\MarmolApp\bin\Debug\netcoreapp3.1\Cosmos.CRTCompat.dll
+C:\Users\Sebastian\source\repos\Program\MarmolApp\bin\Debug\netcoreapp3.1\MarmolApp.deps.json
+C:\Users\Sebastian\source\repos\Program\MarmolApp\bin\Debug\netcoreapp3.1\MarmolApp.dll
+C:\Users\Sebastian\source\repos\Program\MarmolApp\bin\Debug\netcoreapp3.1\MarmolApp.pdb
+C:\Users\Sebastian\source\repos\Program\MarmolApp\obj\Debug\netcoreapp3.1\MarmolApp.csprojAssemblyReference.cache
+C:\Users\Sebastian\source\repos\Program\MarmolApp\obj\Debug\netcoreapp3.1\MarmolApp.AssemblyInfoInputs.cache
+C:\Users\Sebastian\source\repos\Program\MarmolApp\obj\Debug\netcoreapp3.1\MarmolApp.AssemblyInfo.cs
+C:\Users\Sebastian\source\repos\Program\MarmolApp\obj\Debug\netcoreapp3.1\MarmolApp.csproj.CoreCompileInputs.cache
+C:\Users\Sebastian\source\repos\Program\MarmolApp\obj\Debug\netcoreapp3.1\MarmolApp.dll
+C:\Users\Sebastian\source\repos\Program\MarmolApp\obj\Debug\netcoreapp3.1\MarmolApp.pdb

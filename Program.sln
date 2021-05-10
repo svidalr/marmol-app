@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Program", "Program\Program.csproj", "{7F83FA6A-8368-4754-94E9-AE90E6817D4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MarmolApp", "MarmolApp\MarmolApp.csproj", "{A83DAA7B-458B-4D0D-96F2-F2EEAE202A6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AzureFunction", "AzureFunction\AzureFunction.csproj", "{1D059DAC-D90F-4A61-B82A-A97644D4E2D8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7F83FA6A-8368-4754-94E9-AE90E6817D4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F83FA6A-8368-4754-94E9-AE90E6817D4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F83FA6A-8368-4754-94E9-AE90E6817D4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F83FA6A-8368-4754-94E9-AE90E6817D4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A83DAA7B-458B-4D0D-96F2-F2EEAE202A6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A83DAA7B-458B-4D0D-96F2-F2EEAE202A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A83DAA7B-458B-4D0D-96F2-F2EEAE202A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A83DAA7B-458B-4D0D-96F2-F2EEAE202A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D059DAC-D90F-4A61-B82A-A97644D4E2D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D059DAC-D90F-4A61-B82A-A97644D4E2D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D059DAC-D90F-4A61-B82A-A97644D4E2D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D059DAC-D90F-4A61-B82A-A97644D4E2D8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1C83A22C-83B6-4895-BEC0-8534A247F8D3}
+	EndGlobalSection
+EndGlobal
