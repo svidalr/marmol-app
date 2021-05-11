@@ -2,14 +2,11 @@
 
 namespace MarmolApp.Model
 {
-    public class Precio 
-    {
-        public int IdPrecio { get; set; }
+    public class Precio : EntityBase
+    { 
         public DateTime Fecha { get; set; }
-        public int FK_IdProducto { get; set; }
 
-        public TratoProducto TratoProducto { get; set; }
-        public Producto Producto { get; set; }
+        public string IdProducto { get; set; }
 
     }
 }

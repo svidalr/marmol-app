@@ -1,16 +1,21 @@
-﻿namespace MarmolApp.Model
+﻿using System.Collections.Generic;
+
+namespace MarmolApp.Model
 {
     /// <summary>
     /// cliente de marmol
     /// </summary>
-    public class Cliente 
+    public class Cliente : EntityBase
     {
-        public int IdCliente { get; set; }
         public string Nombre { get; set; }
         public string Rut { get; set; }
         public int Celular { get; set; }
 
-        public Trato Trato { get; set; }
+        /// <summary>
+        /// relacion con los tratos a traves de id
+        /// </summary>
+        public List<string> TratosId { get; set; }
+
 
     }
 }

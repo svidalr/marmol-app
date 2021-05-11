@@ -1,15 +1,15 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace MarmolApp.Model
 {
-    public class Fallecido 
+    public class Fallecido : EntityBase
     {
-        public int IdFallecido { get; set; }
         public string NombreCompleto { get; set; }
         public DateTime FechaNacimiento { get; set; }
         public DateTime FechaDefuncion { get; set; }
         public string Epitafio { get; set; }
 
-        public Trato Trato { get; set; }
+        public List<string> IdTrato { get; set; }
     }
 }
