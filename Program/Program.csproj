@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MarmolApp\MarmolApp.csproj" />
+    <ProjectReference Include="..\MarmolApp\marmol.db.cosmos.csproj" />
   </ItemGroup>
 
 </Project>

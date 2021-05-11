@@ -1,4 +1,5 @@
-﻿using MarmolApp;
+﻿using marmol.db.cosmos;
+using MarmolApp;
 using Microsoft.Azure.Cosmos;
 using System;
 using System.Threading.Tasks;
@@ -10,7 +11,7 @@ namespace Program
         static async Task Main(string[] args)
 
         {
-            var cosmosservices = new CosmosService();
+            //var cosmosservices = new CosmosService();
             
             //var item = await cosmosservices.DeleteById("254323");
             //var item = await cosmosservices.CreateCliente("254323", "cristian", 23342343);

@@ -1,14 +1,20 @@
-﻿using Microsoft.Azure.Cosmos;
+﻿using marmol.contracts.db;
+using MarmolApp.Model;
+using Microsoft.Azure.Cosmos;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace MarmolApp
+namespace marmol.db.cosmos
 {
-    public class CosmosService
+    public class CosmosService<T> : IMarmolRepository<T> where T : EntityBase
     {
         CosmosClient client;
         Database database;
         Container container;
+
+
+        public string EntityName { get; set; } = typeof(T).Name;
 
         public string nombredb { get; set; }
         public string namecontainer { get; set; }
@@ -60,5 +66,26 @@ namespace MarmolApp
             return response.Resource;
 
         }
+
+        public Task<IEnumerable<T>> GetAllElements()
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> GetElementById(string id)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<string> InsertElement(T element)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Task<T> UpdateElement(T element)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }

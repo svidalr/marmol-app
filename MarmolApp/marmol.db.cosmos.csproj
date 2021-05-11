@@ -8,4 +8,8 @@
     <PackageReference Include="Microsoft.Azure.Cosmos" Version="3.18.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\marmol.contracts.db\marmol.contracts.db.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -263,3 +263,5 @@ paket-files/
 __pycache__/
 *.pyc
 *.cache
+
+MarmolApp/obj/Debug/netcoreapp3.1/
