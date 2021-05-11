@@ -1,6 +1,6 @@
 ﻿namespace MarmolApp.Model
 {
-    class Producto 
+    public class Producto 
     {
         public int IdProducto { get; set; }
         public double Peso { get; set; }

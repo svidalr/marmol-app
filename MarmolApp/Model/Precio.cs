@@ -2,7 +2,7 @@
 
 namespace MarmolApp.Model
 {
-    class Precio 
+    public class Precio 
     {
         public int IdPrecio { get; set; }
         public DateTime Fecha { get; set; }

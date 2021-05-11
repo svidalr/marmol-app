@@ -2,7 +2,7 @@
 
 namespace MarmolApp.Model
 {
-    class Fallecido 
+    public class Fallecido 
     {
         public int IdFallecido { get; set; }
         public string NombreCompleto { get; set; }

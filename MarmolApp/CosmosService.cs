@@ -20,6 +20,10 @@ namespace MarmolApp
             this.namecontainer = namecontainer;
             
         }
+        public dynamic GetCliente(string id)
+        {
+            return GetItem(id,"cliente");
+        }
         public async Task<dynamic>  GetItem(string id, string PartitionKey)
         {
             Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
@@ -29,12 +33,32 @@ namespace MarmolApp
                 400);
 
             var element = await container.ReadItemAsync<dynamic>(id, new PartitionKey(PartitionKey));
-            return element;
+            return element.Resource;
         }
-
-        public dynamic GetCliente(string id)
+        public async Task<dynamic> CreateCliente(string id, string nombre, int telefono, string EntityName="cliente") 
         {
-            return GetItem(id,"cliente");
+            Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
+            Container container = await database.CreateContainerIfNotExistsAsync(
+                namecontainer,
+                "/EntityName",
+                400);
+
+            dynamic Item = new { id = id, EntityName = EntityName, nombre = nombre, telefono = telefono };
+            var createResponse = await container.CreateItemAsync(Item);
+            return createResponse;
+        }
+           
+        public async Task<dynamic> DeleteById(string id) 
+        {
+            Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
+            Container container = await database.CreateContainerIfNotExistsAsync(
+                namecontainer,
+                "/EntityName",
+                400);
+
+            var response = await container.DeleteItemAsync<dynamic>(id, new PartitionKey("cliente"));
+            return response.Resource;
+
         }
     }
 }

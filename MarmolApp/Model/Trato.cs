@@ -2,7 +2,8 @@
 
 namespace MarmolApp.Model
 {
-    class Trato 
+
+    public class Trato 
     {
         public int IdTrato { get; set; }
         public DateTime FechaInicio { get; set; }

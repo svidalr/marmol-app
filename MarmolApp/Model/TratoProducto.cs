@@ -2,7 +2,7 @@
 
 namespace MarmolApp.Model
 {
-    class TratoProducto 
+    public class TratoProducto 
     {
         public int IdTratoProducto { get; set; }
         public int Cantidad { get; set; }
