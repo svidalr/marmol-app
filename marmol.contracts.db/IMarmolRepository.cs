@@ -10,7 +10,7 @@ namespace marmol.contracts.db
     {
         #region Crud Operation
         Task<IEnumerable<T>> GetAllElements();
-        Task<T> GetElementById(string id);
+        Task<T> GetElementById(string id, string entityname);
         Task<string> InsertElement(T element);
         Task<T> UpdateElement(T element); 
         #endregion

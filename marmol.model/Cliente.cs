@@ -10,11 +10,11 @@ namespace MarmolApp.Model
         public string Nombre { get; set; }
         public string Rut { get; set; }
         public int Celular { get; set; }
-
+       
         /// <summary>
         /// relacion con los tratos a traves de id
         /// </summary>
-        public List<string> TratosId { get; set; }
+        public List<string> TratosId { get; set; } = new List<string>(); 
 
 
     }
