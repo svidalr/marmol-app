@@ -1,8 +1,6 @@
 ﻿using marmol.contracts.db;
 using MarmolApp.Model;
 using Microsoft.Azure.Cosmos;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -25,52 +23,39 @@ namespace marmol.db.cosmos
             this.namecontainer = namecontainer;
             
         }
-        public dynamic GetCliente(string id)
-        {
-            return GetItem(id,"cliente");
-        }
-        public async Task<dynamic>  GetItem(string id, string PartitionKey)
+        
+        public async Task<IEnumerable<T>> GetAllElements(string entityname)
         {
             Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
             Container container = await database.CreateContainerIfNotExistsAsync(
-                namecontainer,
-                "/EntityName",
-                400);
+               namecontainer,
+               "/EntityName",
+               400);
 
-            var element = await container.ReadItemAsync<dynamic>(id, new PartitionKey(PartitionKey));
-            return element.Resource;
-        }
-        public async Task<dynamic> CreateCliente(string id, string nombre, int telefono, string EntityName="cliente") 
-        {
-            Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
-            Container container = await database.CreateContainerIfNotExistsAsync(
-                namecontainer,
-                "/EntityName",
-                400);
+            var query = $"SELECT * FROM c WHERE c.EntityName='{entityname}'";
+            QueryDefinition queryDefinition = new QueryDefinition(query);
 
-            dynamic Item = new { id = id, EntityName = EntityName, nombre = nombre, telefono = telefono };
-            var createResponse = await container.CreateItemAsync(Item);
-            return createResponse;
-        }        
-        public async Task<dynamic> DeleteById(string id) 
-        {
-            Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
-            Container container = await database.CreateContainerIfNotExistsAsync(
-                namecontainer,
-                "/EntityName",
-                400);
 
-            var response = await container.DeleteItemAsync<dynamic>(id, new PartitionKey("cliente"));
-            
-            return response;
+            FeedIterator<T> queryresult = container.GetItemQueryIterator<T>(queryDefinition);
+            List<T> list = new List<T>();
+
+            while (queryresult.HasMoreResults) {
+                FeedResponse<T> currentResultSet = await queryresult.ReadNextAsync();
+                foreach (T t in currentResultSet)
+                {
+                    list.Add(t);
+                } 
+            }
+            return list;
 
         }
-       
-        public Task<IEnumerable<T>> GetAllElements()
-        {
-            throw new NotImplementedException();
-        }
 
+        /// <summary>
+        /// Busca objeto segun id 
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="entityname"></param>
+        /// <returns> Retorna el objeto segun entidad </returns>
         public async Task<T> GetElementById(string id, string entityname)
         {
             Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
@@ -78,13 +63,9 @@ namespace marmol.db.cosmos
                 namecontainer,
                 "/EntityName",
                 400);
-
-            var element = await container.ReadItemAsync<dynamic>(id, new PartitionKey(entityname));
-
-            //var response  = JsonConvert.SerializeObject(element.Resource);
-            //var response = element.Resource.Root;
-            var response = JObject.Parse((string)element);
-            return (T)element;
+           
+            var response = await container.ReadItemAsync<T>(id, new PartitionKey(entityname));
+            return response;
         }
 
         public async Task<string> InsertElement(T element)
@@ -104,7 +85,20 @@ namespace marmol.db.cosmos
 
         public Task<T> UpdateElement(T element)
         {
+            
             throw new NotImplementedException(); 
+        }
+
+        public async Task<T> DeleteElementById(string id, string entityname)
+        {
+            Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
+            Container container = await database.CreateContainerIfNotExistsAsync(
+                namecontainer,
+                "/EntityName",
+                400);
+
+            var response = await container.DeleteItemAsync<T>(id, new PartitionKey(entityname));
+            return response;
         }
     }
 
