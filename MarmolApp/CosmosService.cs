@@ -83,10 +83,17 @@ namespace marmol.db.cosmos
             return element.Id;
         }
 
-        public Task<T> UpdateElement(T element)
+        public async Task<T> UpdateElement(T element, string id, string entityname)
         {
+            Database database = await client.CreateDatabaseIfNotExistsAsync(nombredb);
+            Container container = await database.CreateContainerIfNotExistsAsync(
+                namecontainer,
+                "/EntityName",
+                400);
             
-            throw new NotImplementedException(); 
+            var response = await container.ReplaceItemAsync(element, id, new PartitionKey(entityname));
+
+            return response;
         }
 
         public async Task<T> DeleteElementById(string id, string entityname)

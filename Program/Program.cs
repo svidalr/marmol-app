@@ -64,10 +64,12 @@ namespace Program
             //Console.WriteLine(element.Resource.details);
 
             var cosmosservice = new CosmosService<Persona>();
-            var request = await cosmosservice.GetElementById("df274b68e5bf49a79abec61e3b1303ef", cosmosservice.EntityName);
-            Console.WriteLine(request);
-            request.Nombre = "José";
-        
+            var request = await cosmosservice.GetElementById("dfae86c2eb344648a41968b4fe001ff3", cosmosservice.EntityName);
+            request.Nombre = "ANDRES Pepe";
+            var respuesta = await cosmosservice.UpdateElement(request, request.Id, request.EntityName);
+            Console.WriteLine($"Elemento modificado {respuesta}");
+           
+
 
         }
     }

@@ -12,7 +12,7 @@ namespace marmol.contracts.db
         Task<IEnumerable<T>> GetAllElements(string entityname);
         Task<T> GetElementById(string id, string entityname);
         Task<string> InsertElement(T element);
-        Task<T> UpdateElement(T element);
+        Task<T> UpdateElement(T element, string id, string entityname);
         Task<T> DeleteElementById(string id, string entityname);
         #endregion
     }
