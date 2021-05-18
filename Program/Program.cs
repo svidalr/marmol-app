@@ -54,20 +54,12 @@ namespace Program
             //}
 
 
-
-
-            //var elementomodificado = element.Resource;
-            //elementomodificado.details = "cualquiercosa";
-            //var response = await container.ReplaceItemAsync(elementomodificado, "nuevoid2",new PartitionKey("MyTestPkValue"));
-
-            //element = await container.ReadItemAsync<dynamic>("nuevoid2", new PartitionKey("MyTestPkValue"));
-            //Console.WriteLine(element.Resource.details);
-
-            var cosmosservice = new CosmosService<Persona>();
-            var request = await cosmosservice.GetElementById("dfae86c2eb344648a41968b4fe001ff3", cosmosservice.EntityName);
-            request.Nombre = "ANDRES Pepe";
-            var respuesta = await cosmosservice.UpdateElement(request, request.Id, request.EntityName);
-            Console.WriteLine($"Elemento modificado {respuesta}");
+            /*Actualiza un elemento*/
+            //var cosmosservice = new CosmosService<Persona>();
+            //var request = await cosmosservice.GetElementById("dfae86c2eb344648a41968b4fe001ff3", cosmosservice.EntityName);
+            //request.Nombre = "ANDRES Pepe";
+            //var respuesta = await cosmosservice.UpdateElement(request, request.Id, request.EntityName);
+            //Console.WriteLine($"Elemento modificado {respuesta}");
            
 
 
